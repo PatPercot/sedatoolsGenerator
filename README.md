@@ -1,7 +1,7 @@
 # sedatoolsGenerator
 Générateur automatique de bordereaux basé sur SedaTools
 
-Le principe de fonctionnement du générateur de bordereaux basé sur les SEDATOOLS s'inspire du fonctionnement du générateur ProBANT (voir https://github.com/PatPercot/Seda-Generator).
+Le principe de fonctionnement du générateur de bordereaux basé sur SEDATOOLS s'inspire du fonctionnement du générateur ProBANT (voir https://github.com/PatPercot/Seda-Generator).
 Toutefois, la notion de profil d'archivage ne semblant pouvoir être pérennisée avec le SEDA 2, cette notion est abandonnée au profit d'un guide de génération.
 
 Les deux objectifs du guide de génération sont :
@@ -12,10 +12,13 @@ Un scénario simple d'utilisation du guide de génération pour traiter un flux 
   1) L'archiviste rédige le guide de génération, le valide avec un outil de vérification qui génére un fichier exemple de métadonnées ;
   2) L'archiviste transmet le guide de génération et le fichier d'exemple de métadonnées au développeur ;
   3) Le développeur lit le guide de génération et le fichier de métadonénes et s'assure de la faisabliité des développements spécifiques ;
-  4) Le développeur écrit le code spécifique au flux pour extraire les fichiers et les métadonnées?. Le rôle de ce code est de créer un fichier de métadonnées à partir d'un jeu de données. Bien évidemment le contenu du fichier de métadonnées change d'un flux à un autre, le guide de génération lui est toujours le même pour un flux spécifique ;
-  5) Le développeur s'assure qu'apès la génération des données métier, le code générique du générateur sera appelé avec pour paramètres le guide de génération et le fichier de métdonnées spécifique.
-  6) Après l'appel du générateur, le bordereau de transfert est produit. Il ne reste plus qu'à envoyé le bordereau et les fichiers à archiver dans le SAE.
+  4) Le développeur écrit le code spécifique au flux pour extraire les fichiers et les métadonnées. Le rôle de ce code est de créer un fichier de métadonnées à partir d'un jeu de données. Bien évidemment le contenu du fichier de métadonnées change d'une instance du flux à une autre, le guide de génération lui est toujours le même pour un flux spécifique ;
+  5) Le développeur s'assure qu'après la génération des données métier, le code générique du générateur sera appelé avec les deux paramètres ; "guide de génération" et "fichier de métdonnées spécifique".
+  6) Après l'appel du générateur, le bordereau de transfert est produit. Il ne reste plus qu'à envoyer le bordereau et les fichiers à archiver dans le SAE.
 
 Description du guide de génération :
+  1) Le guide de génération indique l'ordre d'appartion des informations et des unités documentaires ;
+  2) Le guide de génération utilise des codes pour désigner les métadonnées et les unités documentaires. Ces codes seront réutilisés dans le fichier de métadonnées pour permettre une association automatisée par le code générique du générateur de bordereaux. EX : DELIBERATION[#1] désigne la première délibération.
+
 
 
